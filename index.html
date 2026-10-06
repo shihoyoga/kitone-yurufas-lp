@@ -2,15 +2,17 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>7日間のゆるファス｜うさしほ</title>
-<link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ヨハクをつくる7日間｜7 Days of Yohaku</title>
+<link rel="icon" href="assets/favicon.ico">
 <script src="./support.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
+<title>ヨハクをつくる7日間｜7 Days of Yohaku</title>
+<link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&amp;family=Zen+Maru+Gothic:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500&amp;family=Raleway:wght@200;300;400&amp;display=swap" rel="stylesheet">
 <script src="./image-slot.js"></script>
@@ -50,7 +52,7 @@ section[data-m~="heroB"]>div{padding-bottom:132px}
 [data-m~="root"] [style*="font-size:15px"]{font-size:16px!important}
 [data-m~="root"] [style*="font-size:14px"]{font-size:15px!important}
 [data-m~="root"] [style*="font-size:13px"]{font-size:14px!important}}
-@media (max-width:767px){[data-m~="hb-photo"]{aspect-ratio:auto!important;min-height:600px!important}[data-m~="hb-text"]{margin-top:-40px;padding-top:72px!important;background:#2F4A3A;z-index:1;-webkit-mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20400%2040%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2040C40%2038%20150%2030%20220%2018S330%204%20400%202V40Z%27%2F%3E%3C%2Fsvg%3E") top/100% 40px no-repeat,linear-gradient(#000,#000) 0 39px/100% calc(100% - 39px) no-repeat;mask:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20400%2040%27%20preserveAspectRatio%3D%27none%27%3E%3Cpath%20d%3D%27M0%2040C40%2038%20150%2030%20220%2018S330%204%20400%202V40Z%27%2F%3E%3C%2Fsvg%3E") top/100% 40px no-repeat,linear-gradient(#000,#000) 0 39px/100% calc(100% - 39px) no-repeat}}
+@media (max-width:767px){[data-m~="hb-photo"]{aspect-ratio:auto!important;min-height:600px!important}[data-m~="hb-text"]{padding-top:32px!important}[data-m~="hb-wave"]{display:block!important}}
 @media (max-width:767px){
 [data-m~="hero"]{position:static!important}
 [data-m~="hero-photo"]{position:absolute!important;inset:0!important;aspect-ratio:auto!important;width:auto!important;z-index:0}
@@ -81,6 +83,23 @@ image-slot{transition:transform .6s ease}
 [data-m~="row3"]>div:hover image-slot{transform:scale(1.03)}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+@keyframes yf-up{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:none}}
+@keyframes yf-zoom{0%{transform:scale(1)}100%{transform:scale(1.07)}}
+@keyframes yf-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes yf-glow{0%,100%{box-shadow:0 0 0 0 rgba(201,168,106,.0)}50%{box-shadow:0 0 0 6px rgba(201,168,106,.18)}}
+[data-m~="hb-photo"]{overflow:hidden}
+[data-m~="hb-photo"] image-slot{animation:yf-zoom 16s ease-in-out infinite alternate;transform-origin:60% 40%}
+[data-m~="hb-text"]>*{animation:yf-up .8s cubic-bezier(.2,.7,.3,1) both}
+[data-m~="hb-text"]>*:nth-child(2){animation-delay:.12s}[data-m~="hb-text"]>*:nth-child(3){animation-delay:.24s}[data-m~="hb-text"]>*:nth-child(4){animation-delay:.36s}[data-m~="hb-text"]>*:nth-child(5){animation-delay:.48s}[data-m~="hb-text"]>*:nth-child(6){animation-delay:.6s}[data-m~="hb-text"]>*:nth-child(n+7){animation-delay:.72s}
+[data-anim~="card"]{transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s}
+[data-anim~="card"]:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(47,74,58,.12)}
+[data-anim~="btn"],[data-anim~="cta"]{transition:transform .25s ease}
+[data-anim~="btn"]:hover,[data-anim~="cta"]:hover{transform:translateY(-2px) scale(1.02)}
+[data-anim~="cta"]{animation:yf-glow 2.6s ease-in-out infinite}
+[data-anim~="leaf"]{animation:yf-bob 3.2s ease-in-out infinite}
+[data-anim~="emoji"]{animation:yf-bob 3.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
 
@@ -88,8 +107,8 @@ image-slot{transition:transform .6s ease}
 
 <sc-if value="{{ showBar }}" hint-placeholder-val="{{ false }}">
   <div data-m="sp-only" style="position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(242,246,239,.96);backdrop-filter:blur(8px);border-top:1px solid #B7C2AE;display:grid;grid-template-columns:1.4fr 1fr;gap:8px;animation:kn-bar .3s ease both">
-    <a href="#apply" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;text-decoration:none;line-height:1.3" style-hover="color:#FAF6F2"><span style="font-size:14px;font-weight:700">参加を申し込む</span><span style="font-size:10px">受付 10/8（木）20:00〜｜締切 {{ deadline }}</span></a>
-    <a href="https://lin.ee/668ryLr" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;border:1px solid #574B47;background:#FBFCF9;font-size:13px;font-weight:700;text-decoration:none">LINEで質問</a>
+    <a data-anim="btn" href="#apply" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;text-decoration:none;line-height:1.3" style-hover="color:#FAF6F2"><span style="font-size:14px;font-weight:700">参加を申し込む</span><span style="font-size:10px">受付 10/8（木）20:00〜｜締切 {{ deadline }}</span></a>
+    <a data-anim="btn" href="https://lin.ee/668ryLr" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;border:1px solid #574B47;background:#FBFCF9;font-size:13px;font-weight:700;text-decoration:none">LINEで質問</a>
   </div>
 </sc-if>
 
@@ -108,7 +127,7 @@ image-slot{transition:transform .6s ease}
   <div style="max-width:1080px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px">
     <img src="assets/kitone-logo.png" alt="KitoNe" style="height:44px;width:auto;display:block">
     <span style="flex:1"></span>
-    <a href="#apply" style="flex:none;display:inline-flex;flex-direction:column;line-height:1.2;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-weight:700;font-size:13px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2">申込む<span style="display:block;font-size:9px;font-weight:500;line-height:1.2">10/8 20:00〜</span></a>
+    <a data-anim="btn" href="#apply" style="flex:none;display:inline-flex;flex-direction:column;line-height:1.2;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:14px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2">申込む<span style="display:block;font-size:9px;font-weight:500;line-height:1.2">10/8 20:00〜</span></a>
     <button onClick="{{ toggleMenu }}" aria-label="メニュー" style="flex:none;width:46px;height:46px;border-radius:50%;background:#E8C4C0;border:3px solid #F7EFE1;box-shadow:0 3px 10px rgba(87,75,71,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0" style-hover="background:#DDB0AB"><span style="display:block;width:18px;height:2px;border-radius:2px;background:#2F4A3A"></span><span style="display:block;width:18px;height:2px;border-radius:2px;background:#2F4A3A"></span><span style="display:block;width:18px;height:2px;border-radius:2px;background:#2F4A3A"></span></button>
   </div>
 </header>
@@ -145,7 +164,7 @@ image-slot{transition:transform .6s ease}
 <sc-if value="{{ heroB }}" hint-placeholder-val="{{ false }}">
 <section data-m="heroB" style="position:relative;background:#2F4A3A;color:#F3EADC;overflow:hidden">
   <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));align-items:stretch">
-    <div data-m="hb-photo" style="position:relative;aspect-ratio:4/5;width:100%;min-height:100%">
+    <div data-m="hb-photo" style="position:relative;aspect-ratio:4/5;width:100%;min-height:100%"><svg data-m="hb-wave" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true" style="display:none;position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;z-index:3;pointer-events:none"><path d="M0 52C70 60 130 30 200 30S320 12 400 2V60H0Z" fill="#2F4A3A"></path><path d="M0 52C70 60 130 30 200 30S320 12 400 2" fill="none" stroke="#C9A86A" stroke-width="1.2" opacity=".75" vector-effect="non-scaling-stroke"></path></svg>
       <image-slot id="yf-hero" shape="rect" placeholder="やさしい食卓・朝のドリンク" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
       
       <div style="position:absolute;inset:0;background:linear-gradient(rgba(47,74,58,0) 0%,rgba(47,74,58,0) 42%,rgba(47,74,58,.22) 58%,rgba(47,74,58,.4) 76%,rgba(47,74,58,.5) 100%);pointer-events:none"><div style="position: absolute; left: 27px; padding: clamp(48px,8vw,80px) clamp(22px,5vw,48px) clamp(22px,5vw,48px); display: flex; flex-direction: column; gap: 14px; color: #F3EADC; text-shadow: 0 0 12px rgba(30,45,36,.7); top: 264px">
@@ -178,7 +197,7 @@ image-slot{transition:transform .6s ease}
       <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:12px;letter-spacing:.3em">FOR YOU</div>
       <h2 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(24px,5vw,36px);line-height:1.5">自分の声を聴く習慣を。<br>こんな方へ</h2>
     </div>
-    <div style="width:100%;max-width:520px;box-sizing:border-box;background:#FBFCF9;border-radius:24px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column">
+    <div data-anim="card" style="width:100%;max-width:520px;box-sizing:border-box;background:#FBFCF9;border-radius:24px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column">
       <sc-for list="{{ forYou }}" as="f" hint-placeholder-count="8">
         <div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:{{ f.line }}"><span style="flex:none;width:24px;height:24px;border-radius:50%;border:1px solid #C9A86A;display:flex;align-items:center;justify-content:center;font-size:11px">✓</span>{{ f.t }}</div>
       </sc-for>
@@ -217,7 +236,7 @@ image-slot{transition:transform .6s ease}
     </div>
     <div data-reveal="1" data-m="slide" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
       <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
-        <div data-lift="1" style="background:#FBFCF9;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px">
+        <div data-anim="card" data-lift="1" style="background:#FBFCF9;border-radius:24px;padding:22px;display:flex;flex-direction:column;gap:8px">
           <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:11px;letter-spacing:.2em;color:#2F4A3A">DAY</span><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:34px;line-height:1;color:#C9A86A">{{ d.no }}</span></div>
           <p style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-size:18px;line-height:1.5">{{ d.theme }}</p>
         </div>
@@ -234,20 +253,20 @@ image-slot{transition:transform .6s ease}
 <section id="takehome" data-m="sec" style="padding:clamp(44px,9vw,104px) 0;background:#D3DDCB">
   <div style="max-width:1080px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:clamp(18px,4vw,36px)">
     <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
-      <div style="display:flex;align-items:center;gap:10px;font-family:'Raleway',sans-serif;font-weight:300;font-size:12px;letter-spacing:.3em"><span style="width:12px;height:12px;border-radius:0 80% 0 80%;background:#7E8F77;transform:rotate(-8deg)"></span>MY WAY<span style="width:12px;height:12px;border-radius:80% 0 80% 0;background:#7E8F77;transform:rotate(8deg)"></span></div>
+      <div style="display:flex;align-items:center;gap:10px;font-family:'Raleway',sans-serif;font-weight:300;font-size:12px;letter-spacing:.3em"><span data-anim="leaf" style="width:12px;height:12px;border-radius:0 80% 0 80%;background:#7E8F77;transform:rotate(-8deg)"></span>MY WAY<span style="width:12px;height:12px;border-radius:80% 0 80% 0;background:#7E8F77;transform:rotate(8deg)"></span></div>
       <h2 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(24px,5vw,36px);line-height:1.5">7日間で見つける<br data-sp="1"><span data-marker="1" style="background: linear-gradient(rgb(250, 246, 242), rgb(250, 246, 242)) 0px 88% / 100% 38% no-repeat; padding: 0px 4px;" data-shown="1">わたしの整え方</span></h2>
       <p style="margin:0;font-size:13px">知って、整えて、自分のペースで続ける。</p>
     </div>
     <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:10px">
       <sc-for list="{{ takeGroups }}" as="g" hint-placeholder-count="3">
-        <div data-lift="1" style="background:#FBFCF9;border-radius:24px;padding:clamp(14px,3.5vw,28px) clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:10px">
+        <div data-anim="card" data-lift="1" style="background:#FBFCF9;border-radius:24px;padding:clamp(14px,3.5vw,28px) clamp(16px,4vw,28px);display:flex;flex-direction:column;gap:10px">
           <div style="display:flex;align-items:center;gap:12px">
             <span style="flex:none;width:36px;height:36px;border-radius:50%;border:1px solid #B7C2AE;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif;font-weight:200;font-size:17px;color:#2F4A3A">{{ g.no }}</span>
             <div style="display:flex;flex-direction:column;line-height:1.3"><span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:10px;letter-spacing:.3em;color:#2F4A3A">{{ g.en }}</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:19px">{{ g.ja }}</span></div>
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:6px">
             <sc-for list="{{ g.items }}" as="t">
-              <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#E3E8DE;font-size:12px;font-weight:700;line-height:1.5"><span style="flex:none;width:7px;height:7px;border-radius:0 80% 0 80%;background:#7E8F77"></span>{{ t.title }}</span>
+              <span style="display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;background:#E3E8DE;font-size:12px;font-weight:700;line-height:1.5"><span data-anim="leaf" style="flex:none;width:7px;height:7px;border-radius:0 80% 0 80%;background:#7E8F77"></span>{{ t.title }}</span>
             </sc-for>
           </div>
         </div>
@@ -265,7 +284,7 @@ image-slot{transition:transform .6s ease}
     <div data-reveal="1" data-stagger="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:10px;max-width:960px;width:100%;margin:0 auto">
       <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
         <div style="border-radius:22px;padding:14px 18px;display:flex;align-items:center;gap:14px;background:{{ s.bg }};color:{{ s.fg }}">
-          <span style="flex:none;width:56px;height:56px;border-radius:50%;background:{{ s.dot }};display:flex;align-items:center;justify-content:center;font-size:28px;line-height:1">{{ s.icon }}</span>
+          <span data-anim="emoji" style="flex:none;width:56px;height:56px;border-radius:50%;background:{{ s.dot }};display:flex;align-items:center;justify-content:center;font-size:28px;line-height:1">{{ s.icon }}</span>
           <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
             <div style="display:flex;align-items:baseline;gap:8px"><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:17px">{{ s.time }}</span><span style="font-family:'Raleway',sans-serif;font-weight:400;font-size:10px;letter-spacing:.25em">{{ s.k }}</span></div>
             <p style="margin:0;font-weight:700;font-size:14px;line-height:1.5">{{ s.title }}</p>
@@ -275,13 +294,13 @@ image-slot{transition:transform .6s ease}
       </sc-for>
     </div>
     <p data-reveal="1" style="margin:0;align-self:center;padding:8px 18px;border-radius:999px;border:1px solid #B7C2AE;font-size:12px;text-align:center">📖 自分のタイミングでマニュアルもチェック👀</p>
-      <p data-reveal="1" style="margin:0;align-self:center;padding:8px 18px;border-radius:999px;border:1px solid #B7C2AE;font-size:12px;text-align:center">💬 分からないことは「質問ノート」へ。<br data-sp="1">原則24時間以内にお答えします</p>
+      <p data-reveal="1" style="margin:0;align-self:center;padding:8px 18px;border-radius:999px;border:1px solid #B7C2AE;font-size:12px;text-align:center">💬 分からないことは「質問ノート」へ。<br data-sp="1">なるべく24時間以内にお答えします</p>
   </div>
 </section>
 
 <section id="award" data-m="sec" style="padding:clamp(56px,9vw,96px) 0;background:#E3E8DE">
   <div style="max-width:880px;margin:0 auto;padding:0 20px">
-    <div data-reveal="1" style="background:#FBFCF9;border-radius:24px;padding:clamp(24px,5vw,44px);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
+    <div data-anim="card" data-reveal="1" style="background:#FBFCF9;border-radius:24px;padding:clamp(24px,5vw,44px);display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
       <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
         <span style="padding:4px 16px;border-radius:999px;background:#E8C4C0;font-size:13px;font-weight:700;animation:kn-sway 3s ease-in-out infinite">参加者限定</span>
         <div style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(40px,9vw,68px);letter-spacing:.12em;line-height:1.1;color:#2F4A3A">SHARE AWARD</div>
@@ -370,7 +389,7 @@ image-slot{transition:transform .6s ease}
           <div style="flex:none;height:22px;background:#E3E8DE;display:flex;justify-content:center;align-items:flex-end"><span style="width:70px;height:14px;border-radius:0 0 10px 10px;background:#2F4A3A"></span></div>
           <div style="flex:none;background:#E3E8DE;padding:6px 12px 8px;display:flex;align-items:center;gap:7px"><img src="assets/kitone-logo.png" alt="" style="height:22px;width:auto;display:block"><span style="flex:1;font-family:'Kanata','Kiwi Maru',serif;font-size:9.5px;line-height:1.3;color:#2F4A3A">ヨハクをつくる7日間<br><span style="font-size:7.5px">食と暮らしのマニュアル <span style="font-family:'Zen Maru Gothic',sans-serif;color:#5A4E49">by うさしほ🐰</span></span></span><span style="padding:2px 8px;border-radius:999px;background:#2F4A3A;color:#F3EADC;font-size:8px;white-space:nowrap"><span style="font-family:'Raleway',sans-serif;font-size:10px">5</span> / 14 既読</span></div>
           <div style="padding:12px 12px 0;display:flex;flex-direction:column;gap:9px">
-            <div style="display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:center;gap:5px;font-family:'Raleway',sans-serif;font-size:6.5px;letter-spacing:.3em;color:#2F4A3A"><span style="width:7px;height:7px;border-radius:0 80% 0 80%;background:#B7C2AE"></span>YURUFAS GUIDE BOOK</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:16px;line-height:1.4;color:#2F4A3A">ゆるっと整える、<br><span style="background:linear-gradient(#E8C4C0,#E8C4C0) no-repeat 0 88%/100% 38%;padding:0 2px">食と暮らしのマニュアル</span></span></div>
+            <div style="display:flex;flex-direction:column;gap:3px"><span style="display:flex;align-items:center;gap:5px;font-family:'Raleway',sans-serif;font-size:6.5px;letter-spacing:.3em;color:#2F4A3A"><span data-anim="leaf" style="width:7px;height:7px;border-radius:0 80% 0 80%;background:#B7C2AE"></span>YURUFAS GUIDE BOOK</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:16px;line-height:1.4;color:#2F4A3A">ゆるっと整える、<br><span style="background:linear-gradient(#E8C4C0,#E8C4C0) no-repeat 0 88%/100% 38%;padding:0 2px">食と暮らしのマニュアル</span></span></div>
             <div style="background:#E3E8DE;border-radius:16px;padding:10px 12px;display:flex;align-items:center;gap:10px"><div style="position:relative;width:52px;height:52px;flex:none"><svg viewBox="0 0 100 100" width="52" height="52" style="display:block;transform:rotate(-90deg)"><circle cx="50" cy="50" r="42" fill="none" stroke="#FBFCF9" stroke-width="10"></circle><circle cx="50" cy="50" r="42" fill="none" stroke="#E8C4C0" stroke-width="10" stroke-linecap="round" stroke-dasharray="264" stroke-dashoffset="162"></circle></svg><span style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Raleway',sans-serif;font-weight:200;font-size:14px;color:#574B47">38<span style="font-size:7px">%</span></span></div><span style="display:flex;flex-direction:column;gap:2px;line-height:1.3"><span style="font-family:'Raleway',sans-serif;font-size:6.5px;letter-spacing:.25em">MY PROGRESS</span><span style="display:flex;align-items:baseline;gap:5px;color:#2F4A3A"><span style="font-family:'Raleway',sans-serif;font-size:12px">LEVEL 3/5 🌿</span><span style="font-size:7.5px;font-weight:700">読むほど育つ</span></span><span style="font-size:7.5px;font-weight:700;color:#2F4A3A">次のレベルまで、あと3章</span></span></div>
             <div style="display:flex;filter:drop-shadow(0 4px 8px rgba(85,116,93,.22))"><span style="width:9px;border-radius:8px 0 0 8px;background:#7E8F77"></span><span style="flex:1;background:#D3DDCB;padding:5px"><span style="border:1px solid #C9A86A;border-radius:3px;background:#FBFCF9;padding:9px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center"><span style="font-family:'Raleway',sans-serif;font-size:6px;letter-spacing:.25em;color:#2F4A3A">MAIN GUIDE ・ VOL.01</span><span style="font-size:13px;line-height:1">🔰</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:11.5px;line-height:1.4;color:#2F4A3A">食生活をゆるっと<br>整える基本</span><span style="padding:2px 10px;border-radius:999px;background:#2F4A3A;color:#FBFCF9;font-size:7.5px;font-weight:700">まずはこれを読もう 📖</span></span></span><span style="width:5px;margin:4px 0;border-radius:0 5px 5px 0;background:repeating-linear-gradient(90deg,#FBFCF9 0 1px,#E6DCCB 1px 2px)"></span></div>
             <div style="position:relative;border-radius:12px;padding:12px 8px 8px 18px;display:flex;flex-direction:column;gap:6px;background:repeating-linear-gradient(#FBFCF9 0 15px,#EEF2EA 15px 16px);box-shadow:0 0 0 1px #D3DDCB inset"><span style="position:absolute;top:-5px;left:50%;transform:translateX(-50%) rotate(-3deg);width:50px;height:10px;background:rgba(232,196,192,.85);border-radius:2px"></span><span style="position:absolute;top:0;bottom:0;left:11px;width:1px;background:#E8C4C0"></span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:11px;color:#2F4A3A"><span style="background:linear-gradient(#E8C4C0,#E8C4C0) no-repeat 0 88%/100% 40%;padding:0 2px">ᝰ✍🏻 書きこむページ</span></span><span style="align-self:flex-start;padding:2px 7px;border-radius:8px;background:#2F4A3A;color:#F3EADC;font-size:6.5px;font-weight:700">書いたら、オープンチャットでシェアしよう🐰💭</span><span style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px"><span style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset"><span style="width:24px;height:24px;border-radius:8px;background:#F8ECEA;display:flex;align-items:center;justify-content:center;font-size:12px">✏️</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:7.5px;line-height:1.3;color:#2F4A3A;text-align:center">7日間<br>プラン</span></span><span style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset"><span style="width:24px;height:24px;border-radius:8px;background:#E3E8DE;display:flex;align-items:center;justify-content:center;font-size:12px">📋</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:7.5px;line-height:1.3;color:#2F4A3A;text-align:center">カラダ<br>チェック</span></span><span style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 2px;border-radius:10px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset"><span style="width:24px;height:24px;border-radius:8px;background:#F6EFDF;display:flex;align-items:center;justify-content:center;font-size:12px">🌙</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:7.5px;line-height:1.3;color:#2F4A3A;text-align:center">毎日の<br>ふりかえり</span></span></span></div>
@@ -379,7 +398,7 @@ image-slot{transition:transform .6s ease}
           </div>
         </div>
       </div></div>
-    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:560px;background:#FBFCF9;border-radius:24px"><div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;text-align:center"><span style="display:flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,38px);line-height:1;color:#2F4A3A">14</span><span style="font-size:12px;font-weight:700">章</span></span><span style="font-size:11.5px;line-height:1.5">はじめに・徹底解説<br>＋12のテーマ</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;text-align:center"><span style="display:flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,38px);line-height:1;color:#2F4A3A">1</span><span style="font-size:12px;font-weight:700">枚</span></span><span style="font-size:11.5px;line-height:1.5">7日間プランの<br>ワークシート</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;text-align:center"><span style="display:flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,38px);line-height:1;color:#2F4A3A">11/7</span><span style="font-size:12px;font-weight:700">まで</span></span><span style="font-size:11.5px;line-height:1.5">いつでも<br>読み返せる</span></div></div>
+    <div data-anim="card" data-reveal="1" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:560px;background:#FBFCF9;border-radius:24px"><div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;text-align:center"><span style="display:flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,38px);line-height:1;color:#2F4A3A">14</span><span style="font-size:12px;font-weight:700">章</span></span><span style="font-size:11.5px;line-height:1.5">はじめに・徹底解説<br>＋12のテーマ</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;text-align:center"><span style="display:flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,38px);line-height:1;color:#2F4A3A">1</span><span style="font-size:12px;font-weight:700">枚</span></span><span style="font-size:11.5px;line-height:1.5">7日間プランの<br>ワークシート</span></div><div style="display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 6px;text-align:center"><span style="display:flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,38px);line-height:1;color:#2F4A3A">11/7</span><span style="font-size:12px;font-weight:700">まで</span></span><span style="font-size:11.5px;line-height:1.5">いつでも<br>読み返せる</span></div></div>
     <div data-reveal="1" style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;max-width:560px">
       <p style="margin:0">うさしほのこれまでの学びや経験を、<br data-sp="1">オリジナルでまとめた専用マニュアル。<br>スマホでアプリ感覚で読めて、<br data-sp="1"><strong style="font-weight:700">読んだら既読チェック</strong>。<br>自分の進み具合が一目でわかります。</p>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px"><span style="padding:3px 12px;border-radius:999px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset;font-size:12px;font-weight:700">🔰 食生活をゆるっと整える基本</span><span style="padding:3px 12px;border-radius:999px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset;font-size:12px;font-weight:700">🧂 調味料</span><span style="padding:3px 12px;border-radius:999px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset;font-size:12px;font-weight:700">🍯 甘味料</span><span style="padding:3px 12px;border-radius:999px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset;font-size:12px;font-weight:700">🥢 まごはやさしいわ</span><span style="padding:3px 12px;border-radius:999px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset;font-size:12px;font-weight:700">🍠 間食</span><span style="padding:3px 12px;border-radius:999px;background:#FBFCF9;box-shadow:0 0 0 1px #D3DDCB inset;font-size:12px;font-weight:700">🛒 添加物マスター</span><span style="padding:3px 12px;font-size:12px;font-weight:700">ほか全14章</span></div>
@@ -398,28 +417,28 @@ image-slot{transition:transform .6s ease}
       <p style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-size:clamp(17px,3.2vw,21px);color:#2F4A3A">7日間の<span data-marker="1" style="background: linear-gradient(rgb(183, 194, 174), rgb(183, 194, 174)) 0px 88% / 100% 38% no-repeat; padding: 0px 4px; transition: background-size 0.9s cubic-bezier(0.3, 0.8, 0.3, 1) 0.3s;" data-shown="1">相棒アイテム！</span>2つ</p>
       <p style="margin:0">普段の食事だけでがんばるのではなく、<br>腸活アイテムの力も<strong style="font-weight:700">ちょっと借りながら</strong>整える。<br>みんなで同じものを取り入れながら、<br><strong style="font-weight:700">自分のカラダや食生活を観察する</strong><br data-sp="1">7日間です🐰</p>
       <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:640px;text-align:left">
-        <div style="background:#FBFCF9;border-radius:20px;padding:14px 16px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'Raleway',sans-serif;font-weight:400;font-size:10px;letter-spacing:.25em;color:#2F4A3A">ENZYME</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:16px">MANA酵素</span><span style="font-size:12px;line-height:1.7">食生活を少し軽くしたいときに<br>取り入れやすい酵素ドリンク。<br>今回は7日間の中で、<br>うさしほ流の取り入れ方もお伝えします。</span></div>
-        <div style="background:#FBFCF9;border-radius:20px;padding:14px 16px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'Raleway',sans-serif;font-weight:400;font-size:10px;letter-spacing:.25em;color:#2F4A3A">GUT CARE</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:16px">グリーンモンスター</span><span style="font-size:12px;line-height:1.7">毎日の食生活に<br>取り入れやすいGreen Monster。<br>今回は15本お届けして、<br>日々の習慣として体験していただきます。</span></div>
+        <div data-anim="card" style="background:#FBFCF9;border-radius:20px;padding:14px 16px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'Raleway',sans-serif;font-weight:400;font-size:10px;letter-spacing:.25em;color:#2F4A3A">ENZYME</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:16px">MANA酵素</span><span style="font-size:12px;line-height:1.7">食生活を少し軽くしたいときに<br>取り入れやすい酵素ドリンク。<br>今回は7日間の中で、<br>うさしほ流の取り入れ方もお伝えします。</span></div>
+        <div data-anim="card" style="background:#FBFCF9;border-radius:20px;padding:14px 16px;display:flex;flex-direction:column;gap:4px"><span style="font-family:'Raleway',sans-serif;font-weight:400;font-size:10px;letter-spacing:.25em;color:#2F4A3A">GUT CARE</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:16px">グリーンモンスター</span><span style="font-size:12px;line-height:1.7">毎日の食生活に<br>取り入れやすいGreen Monster。<br>今回は15本お届けして、<br>日々の習慣として体験していただきます。</span></div>
       </div>
     </div>
-    <div data-reveal="1" style="background:#FBFCF9;border-radius:24px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column;align-items:center;gap:18px">
+    <div data-anim="card" data-reveal="1" style="background:#FBFCF9;border-radius:24px;padding:clamp(18px,4vw,32px);display:flex;flex-direction:column;align-items:center;gap:18px">
       <div style="display:flex;align-items:flex-start;justify-content:center;gap:clamp(6px,2vw,16px);width:100%;max-width:640px">
         <div style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
-          <div style="position:relative;aspect-ratio:1/1;width:100%;max-width:160px;border-radius:20px;overflow:hidden;background:#E3E8DE"><img src="assets/mana.jpg" alt="MANA酵素" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
+          <div data-anim="card" style="position:relative;aspect-ratio:1/1;width:100%;max-width:160px;border-radius:20px;overflow:hidden;background:#E3E8DE"><img src="assets/mana.jpg" alt="MANA酵素" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></div>
           <p style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-size:15px;line-height:1.4">MANA酵素 1本</p>
           <p style="margin:0;font-size:13px"><span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:17px">9,155</span>円（税込）</p>
           
         </div>
         <span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:28px;color:#2F4A3A;align-self:center">＋</span>
         <div style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
-          <div style="position:relative;aspect-ratio:1/1;width:100%;max-width:160px;border-radius:20px;overflow:hidden;background:#E3E8DE"><image-slot id="yf-gm" shape="rounded" radius="20" placeholder="グリーンモンスター" style="position:absolute;inset:0;width:100%;height:100%"></image-slot></div>
+          <div data-anim="card" style="position:relative;aspect-ratio:1/1;width:100%;max-width:160px;border-radius:20px;overflow:hidden;background:#E3E8DE"><image-slot id="yf-gm" shape="rounded" radius="20" placeholder="グリーンモンスター" style="position:absolute;inset:0;width:100%;height:100%"></image-slot></div>
           <p style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-size:15px;line-height:1.4">グリーンモンスター 15本</p>
           <p style="margin:0;font-size:13px"><span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:17px">3,240</span>円相当</p>
           <p style="margin:0;font-size:10px;line-height:1.5;color:#6E615C">※30本入り6,480円（税込）から換算</p>
         </div>
         <span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:28px;color:#2F4A3A;align-self:center">＋</span>
         <div style="flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center">
-          <div style="position:relative;aspect-ratio:1/1;width:100%;max-width:160px;border-radius:20px;overflow:hidden;background:#E3E8DE"><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><svg viewBox="0 0 24 24" width="46%" height="46%" fill="none" stroke="#2F4A3A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-label="送料"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg></div></div>
+          <div data-anim="card" style="position:relative;aspect-ratio:1/1;width:100%;max-width:160px;border-radius:20px;overflow:hidden;background:#E3E8DE"><div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><svg viewBox="0 0 24 24" width="46%" height="46%" fill="none" stroke="#2F4A3A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-label="送料"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg></div></div>
           <p style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-size:15px;line-height:1.4">送料</p>
           <p style="margin:0;font-size:13px"> 通常<span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:17px">950</span>円</p>
           
@@ -434,11 +453,11 @@ image-slot{transition:transform .6s ease}
       <p style="margin: 0; font-family: 'Kanata','Kiwi Maru',serif; font-size: clamp(18px,3.6vw,22px); text-align: center">➕<br>さらに今回は、</p>
       <div data-m="grid2" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;width:100%">
         <sc-for list="{{ program }}" as="p" hint-placeholder-count="5">
-          <div style="background:#FBFCF9;border-radius:20px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center"><span style="width:40px;height:40px;border-radius:50%;background:#EEF2EA;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:4px">{{ p.icon }}</span><span style="font-size:11px;line-height:1.5;color:#6E615C">{{ p.sub }}</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:15px;line-height:1.5;color:#2F4A3A">{{ p.main }}</span></div>
+          <div data-anim="card" style="background:#FBFCF9;border-radius:20px;padding:16px 12px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center"><span data-anim="emoji" style="width:40px;height:40px;border-radius:50%;background:#EEF2EA;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:4px">{{ p.icon }}</span><span style="font-size:11px;line-height:1.5;color:#6E615C">{{ p.sub }}</span><span style="font-family:'Kanata','Kiwi Maru',serif;font-size:15px;line-height:1.5;color:#2F4A3A">{{ p.main }}</span></div>
         </sc-for>
       </div>
     </div>
-    <div data-reveal="1" style="border:1px solid #C9A86A;background:#FBFCF9;border-radius:24px;padding:clamp(24px,5vw,40px);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+    <div data-anim="card" data-reveal="1" style="border:1px solid #C9A86A;background:#FBFCF9;border-radius:24px;padding:clamp(24px,5vw,40px);display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
       <div style="margin:0 0 2px;padding:10px 22px;border-radius:999px;background:#E3E8DE;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:2px 8px"><span style="font-size:13px;font-weight:700">商品＋送料だけでも</span><span style="display:inline-flex;align-items:baseline;gap:2px"><span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(26px,5.4vw,32px);line-height:1.1;color:#2F4A3A">13,345</span><span style="font-size:13px;font-weight:700">円相当</span></span></div>
       <p style="margin:4px 0 0;font-size:13px">そこに</p>
       <p style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-size:clamp(20px,4vw,26px)"><span data-marker="1" style="background:linear-gradient(#B7C2AE,#B7C2AE) no-repeat 0 88%/100% 38%;padding:0 4px">＋<span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:clamp(30px,6vw,40px)">1,655</span>円</span>で、</p>
@@ -451,7 +470,7 @@ image-slot{transition:transform .6s ease}
       <p style="margin:8px 0 0">初開催だからこそ<br><strong style="font-weight: 700;">気軽に体験していただける価格</strong>で<br data-sp="1">ご用意しました🐰🌿</p><p style="margin:8px 0 0;font-size:13px">お申込み受付：10/8（木）20:00〜　締切：<strong style="font-weight:700">{{ deadline }}</strong></p>
       
     </div>
-    <div data-reveal="1" style="position:relative;background:#FBFCF9;border-radius:24px;padding:clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;align-items:center;box-shadow:0 0 0 1.5px #E8C4C0 inset">
+    <div data-anim="card" data-reveal="1" style="position:relative;background:#FBFCF9;border-radius:24px;padding:clamp(20px,4vw,32px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;align-items:center;box-shadow:0 0 0 1.5px #E8C4C0 inset">
       <div style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;max-width:320px;width:100%;justify-self:center"><img src="assets/energy-bar.jpg" alt="エナジーバー（一例）" style="width:100%;height:100%;object-fit:cover;display:block"><span style="position:absolute;right:8px;bottom:8px;padding:1px 8px;border-radius:999px;background:rgba(251,252,249,.9);font-size:10.5px">※写真は一例です</span></div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
         <span style="position:relative;display:inline-flex;align-items:center;gap:8px;padding:8px 22px;border-radius:999px;background:linear-gradient(135deg,#E8C4C0,#DDB0AB);color:#4A3F3B;font-family:'Kanata','Kiwi Maru',serif;font-size:clamp(17px,3.4vw,20px);letter-spacing:.06em;box-shadow:0 6px 16px rgba(201,127,120,.28);animation:kn-bob 2.4s ease-in-out infinite"><span style="font-size:1.3em;line-height:1;display:inline-block;animation:kn-sway 2s ease-in-out infinite">🎁</span>先着特典<span style="font-family:'Raleway',sans-serif;font-weight:400;font-size:11px;letter-spacing:.2em;padding:1px 8px;border-radius:999px;background:#FBFCF9;color:#C97F78">LIMITED 10</span></span>
@@ -475,14 +494,14 @@ image-slot{transition:transform .6s ease}
       <div style="display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #E3E8DE"><span style="font-size:13px;font-weight:700">申込締切</span><span><strong style="font-weight:700">{{ deadline }}</strong></span></div>
       <div style="display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #E3E8DE"><span style="font-size:13px;font-weight:700">形　式</span><span>オンライン（公式LINE・オープンチャット）</span></div>
       <div style="display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid #E3E8DE"><span style="font-size:13px;font-weight:700">お支払い</span><span>クレジットカード／銀行振込</span></div>
-      <div style="display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;padding:16px 0"><span style="font-size:13px;font-weight:700">ご注意</span><span style="font-size:13px;display:flex;flex-direction:column;gap:6px"><span>本プログラムは<strong style="font-weight:700">グループでのサポート</strong>です。基本的に個別サポートはございません。質問は、参加者限定オープンチャットの「質問ノート」へ。原則24時間以内に回答します。</span><span>専用ガイドは<strong style="font-weight:700">プログラム終了後1週間まで</strong>閲覧できます。</span><span>病気の診断を受けている方・服薬中の方は、基本的にご参加いただけません。本プログラムは治療や治癒を目的としたものではありません。</span><span>本プログラム内での回答は医療相談ではありません。必要に応じて医療機関へご相談ください。</span></span></div>
+      <div style="display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;padding:16px 0"><span style="font-size:13px;font-weight:700">ご注意</span><span style="font-size:13px;display:flex;flex-direction:column;gap:6px"><span>本プログラムは<strong style="font-weight:700">グループでのサポート</strong>です。基本的に個別サポートはございません。質問は、参加者限定オープンチャットの「質問ノート」へ。なるべく24時間以内に回答します。</span><span>専用ガイドは<strong style="font-weight:700">プログラム終了後1週間まで</strong>閲覧できます。</span><span>病気の診断を受けている方・服薬中の方は、基本的にご参加いただけません。本プログラムは治療や治癒を目的としたものではありません。</span><span>本プログラム内での回答は医療相談ではありません。必要に応じて医療機関へご相談ください。</span></span></div>
     </div>
     <div data-reveal="1" style="border-radius: 24px; padding: clamp(28px,5vw,44px); display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; background: linear-gradient(rgba(248,244,244,.35),rgba(248,244,244,.35)), url('assets/bg-linen.jpg') center/cover #f8f4f4; box-shadow: 0 0 0 1px #E3E8DE inset">
       <span style="font-size:36px;display:inline-block;animation:kn-bob 2s ease-in-out infinite">🐰</span>
       <h2 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(22px,4.4vw,32px);line-height:1.5">わたしの整え方を見つける<br>ヨハクをつくる7日間を</h2>
       <div style="display:flex;flex-direction:column;align-items:stretch;gap:12px;width:100%;max-width:340px">
         <a href="#" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.4;min-height:58px;padding:0 28px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-weight:700;font-size:16px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2">参加を申し込む<span style="font-size:11px;font-weight:500;opacity:.9">10/8（木）20:00〜 受付開始</span></a>
-        <a href="https://lin.ee/668ryLr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;background:#FBFCF9;font-weight:500;font-size:15px;text-decoration:none" style-hover="animation:kn-hop .6s ease">LINEで気軽に質問する</a>
+        <a data-anim="btn" href="https://lin.ee/668ryLr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;background:#FBFCF9;font-weight:500;font-size:15px;text-decoration:none" style-hover="animation:kn-hop .6s ease">LINEで気軽に質問する</a>
       </div>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-size:12px"><a href="#policy-cancel" style="color:#574B47">キャンセルポリシー</a><a href="#policy-ship" style="color:#574B47">商品の発送時期</a><a href="legal.html#law" style="color:#574B47">特定商取引法に基づく表記</a></div>
       <div style="width:100%;max-width:560px;text-align:left;font-size:12px;line-height:1.75;border-bottom:1px solid #E3E8DE"><details id="policy-cancel" style="border-top:1px solid #E3E8DE;padding:4px 0 10px"><summary style="cursor:pointer;font-weight:500;min-height:44px;display:flex;align-items:center">キャンセルポリシー</summary><div style="display:flex;flex-direction:column;gap:6px;margin-top:6px"><p style="margin:0">・お申込み・お支払い完了後の、お客様都合によるキャンセル・返金は承っておりません。</p><p style="margin:0">・商品（MANA酵素・グリーンモンスター）の発送後は、返品・交換をお受けできません。</p><p style="margin:0">・商品に破損や不良があった場合は、到着後7日以内に公式LINEまたはメールでご連絡ください。交換などで対応いたします。</p><p style="margin:0">・体調不良などで途中で参加をお休みされた場合も、返金はございません。期間中のサポートは、無理のない範囲でご利用ください。</p></div></details><details id="policy-ship" style="border-top:1px solid #E3E8DE;padding:4px 0 10px"><summary style="cursor:pointer;font-weight:500;min-height:44px;display:flex;align-items:center">商品の発送時期</summary><div style="display:flex;flex-direction:column;gap:6px;margin-top:6px"><p style="margin:0">・プログラム開始日の数日前までに届くよう、順次発送します。</p><p style="margin:0">・国内のみの発送となります。</p></div></details></div>
@@ -603,7 +622,7 @@ class Component extends DCLogic {
       ['決まった時間に参加するものはありますか？', 'ありません。Zoomなどリアルタイムでの参加はなく、毎朝届くLINEと専用ガイドを見ながら、ご自身のタイミングで進めていただけます🐰🥕'],
       ['仕事や予定がある日も参加できますか？', 'はい。外食の日も、予定がある日も、完璧にできなくて大丈夫です。できる範囲で取り組んでください🐰🥕'],
       ['毎日シェアしないといけませんか？', '読むだけ参加もOKです。シェアする場合は、専用の報告フォームに答えるだけで投稿用の文章ができあがります🐰🥕'],
-      ['個別に相談できますか？', '本プログラムはグループでのサポートです。質問はオープンチャット内の「質問ノート」へ投稿してください。原則24時間以内にお答えします🐰🥕'],
+      ['個別に相談できますか？', '本プログラムはグループでのサポートです。質問はオープンチャット内の「質問ノート」へ投稿してください。なるべく24時間以内にお答えします🐰🥕'],
       ['専用マニュアルはいつまで見られますか？', 'できれば開始前に一通り目を通しておくと安心です。閲覧期限は、プログラム終了から1週間後の11/7（土）までです🐰🥕'],
       ['どんな方が参加できますか？', '性別に関わらず、ご参加いただけます。ファスティングマイスターなどの資格や、ファスティングの経験がなくても大丈夫です🐰🥕'],
       ['病気の診断を受けている方・服薬中の方も参加できますか？', '基本的にご参加いただけません。本プログラムは治療や治癒を目的としたものではありません。参加をご希望の場合は、必ず主治医にご相談のうえ、許可が出た場合のみご参加ください。ご不安な方は、お申込み前に公式LINEでもご相談いただけます🐰🥕'],
@@ -664,9 +683,9 @@ class Component extends DCLogic {
         { title: '忙しくても、自分のペースで参加できる', body: '決まった時間の参加はなし。予定がある日も、外食の日も、完璧にできなくてもOK。' },
         { title: '見るだけ参加もOK', body: '毎日シェアしても、読むだけでも大丈夫。自分の心地いいペースで◎' }
       ],
-      program: [{ icon: '☀️', sub: 'LINE（グループ）に毎朝届く', main: 'モーニングメッセージ' }, { icon: '📖', sub: '専用サイトで読める', main: '「食と暮らしのマニュアル」' }, { icon: '💬', sub: '参加者限定', main: 'オープンチャット' }, { icon: '🌙', sub: '毎日のわたしシェア！専用', main: '振り返りフォーム' }, { icon: '🙋🏻‍♀️', sub: '質問ノートで', main: 'うさしほに質問OK' }],
+      program: [{ icon: '🌞', sub: 'LINE（グループ）に毎朝届く', main: 'モーニングメッセージ' }, { icon: '📖', sub: '専用サイトで読める', main: '「食と暮らしのマニュアル」' }, { icon: '💬', sub: '参加者限定', main: 'オープンチャット' }, { icon: '🌙', sub: '毎日のわたしシェア！専用', main: '振り返りフォーム' }, { icon: '🙋🏻‍♀️', sub: '質問ノートで', main: 'うさしほに質問OK' }],
       steps: [
-        { k: 'MORNING', time: '朝', icon: '☀️', title: 'LINEを開く', body: 'LINEに毎朝、今日のテーマと整え方が届きます', bg: '#F6EFDF', fg: '#574B47', dot: '#FBFCF9' },
+        { k: 'MORNING', time: '朝', icon: '🌞', title: 'LINEを開く', body: 'LINEに毎朝、今日のテーマと整え方が届きます', bg: '#F6EFDF', fg: '#574B47', dot: '#FBFCF9' },
         { k: 'DAYTIME', time: '日中', icon: '🥤', title: '食とカラダを観察する', body: '腸活のサポートアイテムも活用して\n食べ方・空腹・カラダの声を聴こう', bg: '#E3E8DE', fg: '#574B47', dot: '#FBFCF9' },
         { k: 'NIGHT', time: '夜', icon: '🌙', title: 'ふり返る', body: 'フォームに答えるだけ。\nみんなのシェアも刺激に（シェアは自由）', bg: '#2F4A3A', fg: '#F3EADC', dot: '#3F5E4A' }
       ],
