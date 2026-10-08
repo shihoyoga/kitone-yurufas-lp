@@ -7,6 +7,8 @@
 <title>ヨハクをつくる7日間｜7 Days of Yohaku</title>
 <link rel="icon" href="assets/favicon.ico">
 <script src="./support.js"></script>
+<style>image-slot{touch-action:pan-y pinch-zoom}</style>
+<style id="kn-small">@media (max-width:374px){div[style*="left: 27px"]{left:10px!important}h1[style*="243, 234, 220"]>span:last-child{font-size:25px!important;white-space:nowrap}div[style*="Raleway"][style*="20px"]{font-size:16px!important;letter-spacing:.2em!important;white-space:nowrap}}</style>
 </head>
 <body>
 <x-dc>
@@ -15,7 +17,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&amp;family=Zen+Maru+Gothic:wght@400;500;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500&amp;family=Raleway:wght@200;300;400&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
+<script src="./image-slot.js?v=1008b"></script>
 <style>
 @font-face{font-family:'Kanata';src:url('assets/fonts/kanata.woff2') format('woff2');font-display:swap}
 body{margin:0;background:#F2F6EF;color:#574B47;-webkit-font-smoothing:antialiased}
@@ -107,7 +109,7 @@ image-slot{transition:transform .6s ease}
 
 <sc-if value="{{ showBar }}" hint-placeholder-val="{{ false }}">
   <div data-m="sp-only" style="position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(242,246,239,.96);backdrop-filter:blur(8px);border-top:1px solid #B7C2AE;display:grid;grid-template-columns:1.4fr 1fr;gap:8px;animation:kn-bar .3s ease both">
-    <a data-anim="btn" href="https://liff.line.me/2007280677-QBKnv6Ar?product_id=23248&type=product-detail&ts=1791454095" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;text-decoration:none;line-height:1.3" style-hover="color:#FAF6F2" target="_blank" rel="noopener"><span style="font-size:14px;font-weight:700">参加を申し込む</span><span style="font-size:10px">締切 {{ deadline }}</span></a>
+    <a data-anim="btn" href="https://liff.line.me/2007280677-QBKnv6Ar?product_id=23248&amp;type=product-detail&amp;ts=1791454095" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;text-decoration:none;line-height:1.3" style-hover="color:#FAF6F2" target="_blank" rel="noopener"><span style="font-size:14px;font-weight:700">参加を申し込む</span><span style="font-size:10px">締切 {{ deadline }}</span></a>
     <a data-anim="btn" href="https://lin.ee/668ryLr" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;border:1px solid #574B47;background:#FBFCF9;font-size:13px;font-weight:700;text-decoration:none">LINEで質問</a>
   </div>
 </sc-if>
@@ -127,7 +129,7 @@ image-slot{transition:transform .6s ease}
   <div style="max-width:1080px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px">
     <img src="assets/kitone-logo.png" alt="KitoNe" style="height:44px;width:auto;display:block">
     <span style="flex:1"></span>
-    <a data-anim="btn" href="https://liff.line.me/2007280677-QBKnv6Ar?product_id=23248&type=product-detail&ts=1791454095" style="flex:none;display:inline-flex;flex-direction:column;line-height:1.2;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:14px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2" target="_blank" rel="noopener">申込む</a>
+    <a data-anim="btn" href="https://liff.line.me/2007280677-QBKnv6Ar?product_id=23248&amp;type=product-detail&amp;ts=1791454095" style="flex:none;display:inline-flex;flex-direction:column;line-height:1.2;align-items:center;justify-content:center;min-height:40px;padding:0 18px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:14px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2" target="_blank" rel="noopener">申込む</a>
     <button onClick="{{ toggleMenu }}" aria-label="メニュー" style="flex:none;width:46px;height:46px;border-radius:50%;background:#E8C4C0;border:3px solid #F7EFE1;box-shadow:0 3px 10px rgba(87,75,71,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0" style-hover="background:#DDB0AB"><span style="display:block;width:18px;height:2px;border-radius:2px;background:#2F4A3A"></span><span style="display:block;width:18px;height:2px;border-radius:2px;background:#2F4A3A"></span><span style="display:block;width:18px;height:2px;border-radius:2px;background:#2F4A3A"></span></button>
   </div>
 </header>
@@ -138,7 +140,7 @@ image-slot{transition:transform .6s ease}
     <div data-m="hero-text" style="display:flex;flex-direction:column;gap:22px">
       <div style="font-family:'Raleway',sans-serif;font-weight:300;font-size:12px;letter-spacing:.3em;display:flex;align-items:center;gap:12px"><span style="width:28px;height:1px;background:#C9A86A"></span>7 Days of Yohaku</div>
       <p style="margin:0;font-size:clamp(15px,2.4vw,18px);font-weight:500">がっつり断食じゃない。</p>
-      <h1 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(34px,8vw,58px);line-height:1.35;letter-spacing:.04em"><span style="display:block;font-size:.34em;letter-spacing:.12em;margin-bottom:6px">自分の整え方を見つける</span>ヨハクをつくる<br><span data-marker="1" style="background:linear-gradient(#B7C2AE,#B7C2AE) no-repeat 0 88%/100% 38%;padding:0 6px">7日間</span></h1>
+      <h1 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(40px,9.4vw,68px);line-height:1.3;letter-spacing:.04em"><span style="display:block;font-size:.34em;letter-spacing:.12em;margin-bottom:6px">自分の整え方を見つける</span>ヨハクをつくる<br><span data-marker="1" style="background:linear-gradient(#B7C2AE,#B7C2AE) no-repeat 0 88%/100% 38%;padding:0 6px">7日間</span></h1>
       <p style="margin:0">食べ方を少し整えて、<br>カラダの声を聞いてみる。<br>うさしほがお伝えする、<br>自分の食生活と向き合う<br data-sp="1">7日間のオンラインプログラムです。</p>
       <div style="display:flex;flex-direction:column;gap:10px;border-top:1px solid #C9A86A;border-bottom:1px solid #C9A86A;padding:16px 0">
         <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px"><span data-m="keep" style="padding:2px 12px;border-radius:999px;background:#E3E8DE;font-size:12px;font-weight:700">期間</span><span style="font-family:'Raleway',sans-serif;font-weight:200;font-size:26px;line-height:1.2;letter-spacing:.04em">{{ dateRangeEn }}</span></div>
@@ -169,7 +171,7 @@ image-slot{transition:transform .6s ease}
       
       <div style="position:absolute;inset:0;background:linear-gradient(rgba(47,74,58,0) 0%,rgba(47,74,58,0) 42%,rgba(47,74,58,.22) 58%,rgba(47,74,58,.4) 76%,rgba(47,74,58,.5) 100%);pointer-events:none"><div style="position: absolute; left: 27px; padding: clamp(48px,8vw,80px) clamp(22px,5vw,48px) clamp(22px,5vw,48px); display: flex; flex-direction: column; gap: 14px; color: #F3EADC; text-shadow: 0 0 12px rgba(30,45,36,.7); top: 264px">
         <div style="font-family: 'Raleway',sans-serif; font-weight: 400; font-size: 20px; letter-spacing: .3em; text-shadow: 0 0 10px rgba(30,45,36,.8); display: flex; align-items: center; gap: 12px; color: #F3EADC"><span style="width:28px;height:1px;background:#C9A86A"></span>7 Days of Yohaku<span style="letter-spacing:.08em;font-family:'Kanata','Kiwi Maru',serif;margin-left:4px"><br></span></div>
-        <h1 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(38px,7vw,64px);line-height:1.3;letter-spacing:.04em;color:#F3EADC"><span style="display: block; font-size: 0.34em; letter-spacing: 0.12em; margin-bottom: 6px;">自分の整え方を見つける</span><span data-marker="1" style="background: linear-gradient(rgb(85, 116, 93), rgb(85, 116, 93)) 0px 88% / 100% 38% no-repeat; padding: 0px 6px; transition: background-size 0.9s cubic-bezier(0.3, 0.8, 0.3, 1) 0.3s; font-size: 20px" data-shown="1">ヨハクをつくる7日間</span></h1>
+        <h1 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(44px,8.4vw,76px);line-height:1.25;letter-spacing:.04em;color:#F3EADC"><span style="display: block; font-size: 0.34em; letter-spacing: 0.12em; margin-bottom: 6px;">自分の整え方を見つける</span><span data-marker="1" style="background: linear-gradient(rgb(85, 116, 93), rgb(85, 116, 93)) 0px 88% / 100% 38% no-repeat; padding: 0px 6px; transition: background-size 0.9s cubic-bezier(0.3, 0.8, 0.3, 1) 0.3s; font-size: 30px" data-shown="1">ヨハクをつくる7日間</span></h1>
         <span style="font-family:'Raleway',sans-serif;font-weight:300;font-size:clamp(20px,3.2vw,28px);line-height:1.3;letter-spacing:.04em;color:#F3EADC">{{ dateRangeEn }}</span>
         <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:2px"><span style="padding:1px 10px;border-radius:999px;border:1px solid #F3EADC;font-size:10.5px;font-weight:700">自分のペースで</span><span style="padding:1px 10px;border-radius:999px;border:1px solid #F3EADC;font-size:10.5px;font-weight:700">見るだけ参加OK</span></div>
       </div></div>
@@ -499,7 +501,7 @@ image-slot{transition:transform .6s ease}
       <span style="font-size:36px;display:inline-block;animation:kn-bob 2s ease-in-out infinite">🐰</span>
       <h2 style="margin:0;font-family:'Kanata','Kiwi Maru',serif;font-weight:500;font-size:clamp(22px,4.4vw,32px);line-height:1.5">わたしの整え方を見つける<br>ヨハクをつくる7日間を</h2>
       <div style="display:flex;flex-direction:column;align-items:stretch;gap:12px;width:100%;max-width:340px">
-        <a href="https://liff.line.me/2007280677-QBKnv6Ar?product_id=23248&type=product-detail&ts=1791454095" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.4;min-height:58px;padding:0 28px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-weight:700;font-size:16px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2" target="_blank" rel="noopener">参加を申し込む</a>
+        <a href="https://liff.line.me/2007280677-QBKnv6Ar?product_id=23248&amp;type=product-detail&amp;ts=1791454095" style="display:inline-flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.4;min-height:58px;padding:0 28px;border-radius:999px;background:#2F4A3A;color:#FAF6F2;font-weight:700;font-size:16px;text-decoration:none" style-hover="animation:kn-hop .6s ease;color:#FAF6F2" target="_blank" rel="noopener">参加を申し込む</a>
         <a data-anim="btn" href="https://lin.ee/668ryLr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 24px;border-radius:999px;background:#FBFCF9;font-weight:500;font-size:15px;text-decoration:none" style-hover="animation:kn-hop .6s ease">LINEで気軽に質問する</a>
       </div>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;font-size:12px"><a href="#policy-cancel" style="color:#574B47">キャンセルポリシー</a><a href="#policy-ship" style="color:#574B47">商品の発送時期</a><a href="legal.html#law" style="color:#574B47">特定商取引法に基づく表記</a></div>
